@@ -1,0 +1,54 @@
+import pandas as pd
+df = pd.read_csv(r"C:\Users\rupanjana ghosh\Downloads\archive (3)\apple_quality.csv")
+print("dataframe",df)
+
+#removing duplicates
+df.drop_duplicates()
+
+#deleting ids
+dataframe= df.drop(["A_id"],axis=1,inplace= False)
+print(dataframe)
+
+#sweet apples
+result = df[df['Sweetness'] > 5]
+print(result)
+
+# sorting the data by weight
+import numpy as np
+sorted_df = df.sort_values(by='Sweetness') 
+print(sorted_df)
+
+#correlation between different columns
+print (df.corr())
+
+#missimg values
+nul=(df.isnull)
+print(nul)
+
+#lowest sweetness recorded in apples
+least_sweet= min(df["Sweetness"])
+print(least_sweet)
+
+# sweetest apple recorded
+most_sweet= max(df["Sweetness"])
+print(most_sweet)
+
+#most ripe apples
+result1 = df[df['Ripeness'] > 5]
+print(result1)
+
+#crunchiest apple
+v=df['Crunchiness'].max()
+print('maxcrunch',v)
+
+#avg acidity
+avgacidity=df['Acidity'].mean()
+print('avgacidity',v)
+
+
+
+
+
+
+
+
